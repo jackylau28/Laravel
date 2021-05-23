@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class PageControler extends Controller
 {
-    //
+    function pb(){
+        
+    }
 }
