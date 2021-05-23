@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class PageControler extends Controller
 {
-    function pb(Request $request){
-        
+    public function pb(Request $request)
+    {
         $version=$request->input("version");
         
-        return view('pk',[
+        return view('pk', [
             'version'=>$version
         ]);
     }

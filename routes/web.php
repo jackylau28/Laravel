@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageControler;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
-/*
-Route::get("/pk",function(){
-    $version = $_GET['version'];
-    return view('pk',['version'=>$version]);
-});
-*/
 
-Route::get('pk',[PageControler::class,'pb']);
+Auth::routes();
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/posts',PostController::class)->middleware('auth');
