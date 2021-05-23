@@ -4,7 +4,7 @@
 </header>
 
 <body>
-    <h1>View</h1>
+    <h1>View {{ $version }}</h1>
 </body>
 
 </html>

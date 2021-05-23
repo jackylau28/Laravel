@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageControler;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+/*
 Route::get("/pk",function(){
-    return view('pk');
+    $version = $_GET['version'];
+    return view('pk',['version'=>$version]);
 });
+*/
+
+Route::get('pk',[PageControler::class,'pb']);
